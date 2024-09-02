@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
-import backgroundImage from '../../assets/bg-auth.jpg';
-import photo from '../../assets/bg-auth-2.png';
-import { z } from 'zod';
+import backgroundImage from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import { zodResolver } from '@hookform/resolvers/zod';
+import photo from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import { z } from "zod";
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form';
 import { FieldValues } from 'react-hook-form';
@@ -12,10 +13,11 @@ const registerSchema = z.object({
   email: z.string().email('Invalid email address'),
   password: z.string().min(8, 'Password must be at least 8 characters'),
 });
+
 const RegisterPage = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({
-   // resolver: zodResolver(registerSchema),
+   resolver: zodResolver(registerSchema),
   });
   const onSubmit: SubmitHandler<FieldValues> = async () => {
     navigate('/login');
