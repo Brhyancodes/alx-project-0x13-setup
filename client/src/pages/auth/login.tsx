@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import backgroundImage from '../../assets/debbal-bg.jpg';
-import photo from '../../assets/debbal-logo.jpg';
+import backgroundImage from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import photo from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { FieldError } from 'react-hook-form';
@@ -112,7 +112,7 @@ const LoginPage = () => {
           <p className="mt-2 text-center">
             Don't have an account?{" "}
             <Link
-              to="/register"
+              to="/registration"
               className="text-blue-500 font-bold hover:text-blue-700"
             >
               Register

@@ -3,8 +3,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import myImage from "../../assets/bg-auth-2.png";
-import bgImage from "../../assets/authoBg.png";
+import myImage from "../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg";
+import bgImage from "../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg";
 
 // password recovery form using Zod
 const passwordRecoverySchema = z.object({
@@ -47,7 +47,7 @@ const PasswordRecoveryForm: React.FC = () => {
         navigate("/login");
       }, 120000);
     } catch {
-      setError("An error occurred. Please try again later.")
+      setError("An error occurred. Please try again later.");
     } finally {
       setLoading(false);
     }

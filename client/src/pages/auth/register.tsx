@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-import backgroundImage from '../../assets/bg-auth.jpg';
+import backgroundImage from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
 import { zodResolver } from '@hookform/resolvers/zod';
-import photo from '../../assets/bg-auth-2.png';
+import photo from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
 import { z } from "zod";
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form';
