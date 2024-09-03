@@ -1,8 +1,7 @@
-"use client";
-
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Footer from "../../components/Footer";
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -16,7 +15,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white h-screen">
+    <div className="bg-white min-h-screen">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
@@ -114,7 +113,7 @@ export default function App() {
         </Dialog>
       </header>
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative min-h-screen isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -193,6 +192,7 @@ export default function App() {
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         ></div>
       </div>
+      <Footer />
     </div>
   );
 }
