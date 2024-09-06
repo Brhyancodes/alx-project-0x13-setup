@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   const links = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "Products", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "About Us", href: "/aboutus" },
+    { name: "Contact", href: "contact" },
+    { name: "FAQ", href: "faq" },
   ];
 
   const contactInfo = [
