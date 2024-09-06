@@ -4,6 +4,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TbClockHour3 } from "react-icons/tb";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const contactInfo = [
   {
@@ -140,6 +141,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };

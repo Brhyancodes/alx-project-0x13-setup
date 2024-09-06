@@ -1,24 +1,52 @@
 import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Dialog,
+  DialogPanel,
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/react";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { FaPhone } from "react-icons/fa6";
-import { FaCartShopping } from "react-icons/fa6";
-import Banner from "./Banner"
-import Cart from "../components/Cart"
+import { FaPhone, FaCartShopping } from "react-icons/fa6";
+import Banner from "./Banner";
+import Cart from "../components/Cart";
+import { FaToolbox } from "react-icons/fa6";
+import { GiMedicines } from "react-icons/gi";
 
+// Dropdown data for Product
+const productsDropdown = [
+  {
+    name: "Medical Drugs",
+    description: "all medical drugs are here",
+    href: "/product",
+    icon: FaToolbox,
+  },
+  {
+    name: "Medical Equipments",
+    description: "all medical drugs are here",
+    href: "/product",
+    icon: GiMedicines,
+  },
+];
+
+// Other navigation links
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Product", href: "/product" },
-  { name: "About Us", href: "#" },
+  { name: "Product", href: "/product" }, // Dropdown will be added to this
+  { name: "About Us", href: "/aboutus" },
   { name: "Contact", href: "/contact" },
-  { name: "FAQ", href: "#" },
+  { name: "FAQ", href: "/faq" },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-
+  const [productDropdownOpen, setProductDropdownOpen] = useState(false); // state for product dropdown in mobile
 
   return (
     <>
@@ -64,15 +92,56 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.name === "Product" ? (
+                <Popover key={item.name} className="relative">
+                  <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                    <span>{item.name}</span>
+                    <ChevronDownIcon aria-hidden="true" className="h-5 w-5" />
+                  </PopoverButton>
+
+                  <PopoverPanel className="absolute left-1/2 z-10 mt-5 w-screen max-w-md -translate-x-1/2 px-4">
+                    <div className="overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                      <div className="p-4">
+                        {productsDropdown.map((product) => (
+                          <>
+                            <Link
+                              to={product.href}
+                              className="font-semibold text-gray-900"
+                            >
+                              <div
+                                key={product.name}
+                                className="group relative flex items-center gap-x-4 p-4 hover:bg-gray-100"
+                              >
+                                <product.icon
+                                  className="h-6 w-6 text-gray-400 group-hover:text-green-600"
+                                  aria-hidden="true"
+                                />
+                                <div>
+                                  {product.name}
+
+                                  <p className="text-sm text-gray-500">
+                                    {product.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </Link>
+                          </>
+                        ))}
+                      </div>
+                    </div>
+                  </PopoverPanel>
+                </Popover>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
@@ -83,6 +152,7 @@ export default function Navbar() {
             </Link>
           </div>
         </nav>
+
         <Dialog
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}
@@ -111,20 +181,51 @@ export default function Navbar() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  {navigation.map((item) =>
+                    item.name === "Product" ? (
+                      <div key={item.name}>
+                        <button
+                          onClick={() =>
+                            setProductDropdownOpen(!productDropdownOpen)
+                          }
+                          className="-mx-3 flex items-center justify-between w-full rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
+                          <ChevronDownIcon
+                            className={`${
+                              productDropdownOpen ? "rotate-180" : ""
+                            } h-5 w-5`}
+                          />
+                        </button>
+                        {productDropdownOpen && (
+                          <div className="mt-2 space-y-2">
+                            {productsDropdown.map((product) => (
+                              <Link
+                                key={product.name}
+                                to={product.href}
+                                className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                              >
+                                {product.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        {item.name}
+                      </Link>
+                    )
+                  )}
                 </div>
                 <div className="py-6">
                   <Link
                     to="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
                   </Link>
