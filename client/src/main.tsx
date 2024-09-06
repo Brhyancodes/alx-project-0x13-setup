@@ -10,6 +10,7 @@ import PasswordRecoveryForm from "./pages/auth/forgetpw.tsx";
 import LoginPage from "./pages/auth/login.tsx";
 import LogoutPage from "./pages/auth/logout.tsx";
 import ProductPage from "./pages/product/Product_Page.tsx";
+import Contact from "./pages/Contact.tsx"
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,12 @@ const router = createBrowserRouter([
   {
     path: "/product",  // Add route for product page
     element: <ProductPage />,
-  },
+  }, 
+ {
+    path: "/contact",  // Add route for product page
+    element: <Contact/>,
+  }, 
+ 
 ]);
 
 createRoot(document.getElementById("root")!).render(
