@@ -39,8 +39,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Product", href: "/product" }, // Dropdown will be added to this
   { name: "About Us", href: "/aboutus" },
-  { name: "Contact", href: "/contact" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {

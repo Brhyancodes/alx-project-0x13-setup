@@ -5,8 +5,7 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "Products", href: "#" },
     { name: "About Us", href: "/aboutus" },
-    { name: "Contact", href: "contact" },
-    { name: "FAQ", href: "faq" },
+    { name: "Contact Us", href: "contact" },
   ];
 
   const contactInfo = [
