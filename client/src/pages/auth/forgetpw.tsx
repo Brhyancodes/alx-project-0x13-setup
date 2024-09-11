@@ -3,8 +3,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import myImage from "../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg";
-import bgImage from "../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg";
+import myImage from "../../assets/wp1931665-pharmacy-wallpapers.jpg";
+import bgImage from "../../assets/wp1931665-pharmacy-wallpapers.jpg";
 
 // password recovery form using Zod
 const passwordRecoverySchema = z.object({
@@ -57,29 +57,30 @@ const PasswordRecoveryForm: React.FC = () => {
     navigate("/login");
   };
   const handleNewAccount = () => {
-    navigate("/register");
+    navigate("/registration");
   };
 
   return (
     <>
       <div
-        className="flex justify-center items-center w-screen h-screen "
+        className="flex justify-center items-center w-screen h-screen p-4 md:p-0"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-gray-50 rounded-lg pl-2  pr-6 mb-4 w-full max-w-3xl  flex flex-col md:flex-row sm:flex-row">
+        <div className="bg-gray-50 rounded-lg p-4 md:p-6 w-full max-w-3xl flex flex-col md:flex-row items-center">
+          {/* Hidden image on smaller screens */}
           <div
-            className="md:w-1/2  sm:w-1/3 bg-cover bg-center hidden md:block sm:block mr-8 rounded-lg py-4 ml-none mb-2  mt-2 pt-4 pb-4"
+            className="w-full md:w-1/2 h-48 md:h-auto bg-cover bg-center hidden md:block rounded-lg"
             style={{ backgroundImage: `url(${myImage})` }}
           ></div>
 
-          <div className="flex-1 ">
-            <div className="flex-1 flex justify-between items-center ">
-              <h2 className="font-bold mb-4 ">Forget Password</h2>
-              <h2 className="font-bold mb-4 ">
+          <div className="flex-1 w-full md:ml-6">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="font-bold text-lg">Forget Password</h2>
+              <h2 className="font-bold text-lg">
                 filix<span className="text-blue-500">pharma</span>
               </h2>
             </div>
@@ -90,9 +91,9 @@ const PasswordRecoveryForm: React.FC = () => {
                 will receive an Email in {timer} seconds.
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-4 ">
-                  <label htmlFor="email" className="block font-medium mb-2 ">
+              <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+                <div className="mb-4">
+                  <label htmlFor="email" className="block font-medium mb-2">
                     Email Address
                   </label>
                   <input
@@ -117,7 +118,7 @@ const PasswordRecoveryForm: React.FC = () => {
 
                 <button
                   type="submit"
-                  className={`bg-blue-500 hover:bg-green-600 text-white font-medium py-2 px-4 w-full rounded-md transition-colors  ${
+                  className={`bg-blue-500 hover:text-blue-700 text-white font-medium py-2 px-4 w-full rounded-md transition-colors ${
                     loading ? "cursor-not-allowed opacity-50" : ""
                   }`}
                   disabled={loading}
@@ -126,27 +127,27 @@ const PasswordRecoveryForm: React.FC = () => {
                 </button>
 
                 {error && <div className="text-red-500 mt-4">{error}</div>}
-                <div className="flex mt-3">
-                  <hr className="w-1/2 mt-2 border-dashed"></hr>
-                  <p className="text-center">Or</p>
-                  <hr className="w-1/2 mt-2 border-dashed"></hr>
+                <div className="flex items-center my-4">
+                  <hr className="w-1/2 border-dashed" />
+                  <p className="text-center mx-2">Or</p>
+                  <hr className="w-1/2 border-dashed" />
                 </div>
 
-                <div className="mt-2 text-center flex">
+                <div className="mt-4 text-center flex justify-center">
                   <p className="text-left">I Remembered The Password? </p>
                   <button
                     type="button"
-                    className="text-blue-500 hover:text-green-600 font-medium ml-2"
+                    className="text-blue-500 hover:text-blue-700 font-medium ml-2"
                     onClick={handleForgotPassword}
                   >
                     login
                   </button>
                 </div>
-                <div className="mt-4 mb-2 text-center flex">
-                  <p className="text-center">New Account?</p>
+                <div className="mt-4 mb-2 text-center flex justify-center">
+                  <p className="text-left">New Account?</p>
                   <button
                     type="button"
-                    className="text-blue-500 hover:text-green-600 font-medium ml-2 "
+                    className="text-blue-500 hover:text-blue-700 font-medium ml-2"
                     onClick={handleNewAccount}
                   >
                     Register Now

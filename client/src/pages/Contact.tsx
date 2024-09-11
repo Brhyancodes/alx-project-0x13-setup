@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { TbClockHour3 } from "react-icons/tb";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FAQSection from "../components/FAQ";
 
 const contactInfo = [
   {
@@ -14,9 +15,20 @@ const contactInfo = [
   },
   {
     label: "Phone",
-    value: "+1 (234) 567-8900",
+    value: "+251952040506",
     icon: <FaPhoneAlt className="text-green-600" />,
   },
+  {
+    label: "Phone",
+    value: "+251901125691",
+    icon: <FaPhoneAlt className="text-green-600" />,
+  },
+  {
+    label: "Phone",
+    value: "+251909680259",
+    icon: <FaPhoneAlt className="text-green-600" />,
+  },
+ 
   {
     label: "Email",
     value: "example@example.com",
@@ -141,6 +153,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
+      <FAQSection />
       <Footer/>
     </>
   );
