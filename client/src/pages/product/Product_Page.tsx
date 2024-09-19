@@ -51,7 +51,7 @@ const ProductPage: React.FC = () => {
   return (
     <>
      
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-800">
+      <div className="min-h-screen bg-gray-100 pt-40 dark:bg-gray-800">
         <Navbar />
         <main className="py-8">
           <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">

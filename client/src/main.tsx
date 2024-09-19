@@ -12,7 +12,7 @@ import LogoutPage from "./pages/auth/logout.tsx";
 import ProductPage from "./pages/product/Product_Page.tsx";
 import Contact from "./pages/Contact.tsx";
 import FAQ from "./pages/FAQ.tsx";
-import About from "./pages/About.tsx"
+import About from "./pages/About.tsx";
 
 const router = createBrowserRouter([
   {
@@ -37,18 +37,19 @@ const router = createBrowserRouter([
     element: <LogoutPage />,
   },
   {
-    path: "/product", // Add route for product page
+    path: "/product",
     element: <ProductPage />,
   },
   {
-    path: "/contact", // Add route for product page
+    path: "/contact",
     element: <Contact />,
   },
   {
-    path: "/faq", // Add route for product page
+    path: "/faq",
     element: <FAQ />,
-  },{
-    path: "/aboutus", // Add route for product page
+  },
+  {
+    path: "/aboutus",
     element: <About />,
   },
 ]);

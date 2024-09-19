@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   const links = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "#" },
+    { name: "Products", href: "product" },
     { name: "About Us", href: "/aboutus" },
     { name: "Contact", href: "contact" },
     { name: "FAQ", href: "faq" },
@@ -12,7 +12,7 @@ const Footer = () => {
   const contactInfo = [
     {
       type: "Address",
-      value: "Pastor Square, Somalia St., Filix Pharmacy",
+      value: "Pastor Square, Somalia St, Filix Pharmacy",
     },
     { type: "Phone", value: "+251-9145-678-901" },
     { type: "Email", value: "contact@pharmawholesale.com" },
