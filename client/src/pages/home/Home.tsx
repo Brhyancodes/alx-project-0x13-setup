@@ -2,7 +2,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Featured from "../../components/Featured";
 import About from "../../components/About";
-import FAQSection from "../../components/FAQ";
 import Testimonials from "../../components/Testimonials";
 import Hero from "../../components/Hero";
 
@@ -17,7 +16,6 @@ export default function App() {
       <Featured />
       <About />
       <Testimonials />
-      <FAQSection />
       <Footer />
     </>
   );

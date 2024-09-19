@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-import backgroundImage from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import backgroundImage from '../../assets/wp1931665-pharmacy-wallpapers.jpg';
 import { zodResolver } from '@hookform/resolvers/zod';
-import photo from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import photo from '../../assets/wp1931665-pharmacy-wallpapers.jpg';
 import { z } from "zod";
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form';

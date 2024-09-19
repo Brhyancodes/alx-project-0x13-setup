@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <RegisterPage />,
   },
   {
-    path: "/passwordreset",
+    path: "/forgetpw",
     element: <PasswordRecoveryForm />,
   },
   {
