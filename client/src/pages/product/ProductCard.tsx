@@ -10,12 +10,10 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, price, availability, imageUrl, description }) => {
   return (
-    <div className="py-8 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+    <div className="py-8 bg-gray-100 rounded-lg shadow-md  ">
       <div className="flex flex-col h-full">
         {/* Header */}
-        <header className="p-4 bg-gray-200 rounded-t-lg dark:bg-gray-700">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{name}</h2>
-        </header>
+      
 
         {/* Image */}
         <div className="flex-grow mb-4">

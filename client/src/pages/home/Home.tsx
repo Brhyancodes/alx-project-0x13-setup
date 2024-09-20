@@ -4,15 +4,20 @@ import Featured from "../../components/Featured";
 import About from "../../components/About";
 import Testimonials from "../../components/Testimonials";
 import Hero from "../../components/Hero";
+import Cauresel from "../../components/CaureselHero";
+// import { CourselDeal } from "../../components/CourselDeal";
+
+
 
 export default function App() {
   return (
     <>
-      <div className="relative h-screen bg-[url('https://images.pexels.com/photos/5699522/pexels-photo-5699522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-lg"></div>
+      <div className="relative h-screen  bg-no-repeat bg-cover bg-center">
+        <Cauresel/>
         <Navbar />
         <Hero />
       </div>
+      {/* <CourselDeal/> */}
       <Featured />
       <About />
       <Testimonials />

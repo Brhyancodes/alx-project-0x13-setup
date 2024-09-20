@@ -13,6 +13,12 @@ import ProductPage from "./pages/product/Product_Page.tsx";
 import Contact from "./pages/Contact.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import About from "./pages/About.tsx";
+import AOS from "aos"
+import "aos/dist/aos.css";
+AOS.init({
+  duration: 1000,
+  once: false,
+});
 
 const router = createBrowserRouter([
   {

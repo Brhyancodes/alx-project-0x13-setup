@@ -2,7 +2,7 @@ import React from "react";
 
 const Section: React.FC = () => {
   return (
-    <div className="relative overflow-hidden bg-slate-100 pt-16 pb-32 space-y-24">
+    <div className="relative overflow-hidden bg-slate-100 pt-16 pb-32 space-y-24 ">
       <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
