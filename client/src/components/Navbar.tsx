@@ -22,7 +22,7 @@ import { GiMedicines } from "react-icons/gi";
 const productsDropdown = [
   {
     name: "Medical Drugs",
-    description: "all medical drugs are here",
+    description: "all medical drugs are here", 
     href: "/product",
     icon: FaToolbox,
   },
@@ -37,7 +37,7 @@ const productsDropdown = [
 // Other navigation links
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Product", href: "/product" }, // Dropdown will be added to this
+  { name: "Product", href: "/product" }, 
   { name: "About Us", href: "/aboutus" },
   { name: "Contact Us", href: "/contact" },
 ];

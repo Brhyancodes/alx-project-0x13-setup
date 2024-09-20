@@ -5,7 +5,7 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       ></div>
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      {/* <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">
@@ -31,7 +31,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
