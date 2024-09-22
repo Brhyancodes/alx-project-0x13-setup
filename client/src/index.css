@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-pagination {
+  text-align: center; /* Center the pagination if needed */
+}

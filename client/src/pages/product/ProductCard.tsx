@@ -1,66 +1,90 @@
-import React from 'react';
+import React from "react";
+import { CiShoppingCart } from "react-icons/ci";
+import { RiShoppingBag3Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   name: string;
   price: string;
-  availability: string;
+  availability: "In Stock" | "Out of Stock"; // More specific type
   imageUrl: string;
-  description: string;
+  category: string;
+  rating: number;
+  id: number;
+  promotion?: string; // Optional promotion message
+  onAddToCart?: () => void; // Optional handler for add to cart
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, price, availability, imageUrl, description }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  name,
+  price,
+  availability,
+  imageUrl,
+  category,
+  rating,
+  id,
+  promotion,
+  onAddToCart,
+}) => {
   return (
-    <div className="py-8 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
-      <div className="flex flex-col h-full">
-        {/* Header */}
-        <header className="p-4 bg-gray-200 rounded-t-lg dark:bg-gray-700">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{name}</h2>
-        </header>
+    <div className="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow-sm h-80 w-80">
+      {/* Image Section */}
+      <div className="flex items-center justify-center w-full h-40">
+        <Link to={`/product/${id}`}>
+          <img
+            className="object-cover h-full"
+            src={imageUrl}
+            alt={`Image of ${name}`}
+          />
+        </Link>
+      </div>
 
-        {/* Image */}
-        <div className="flex-grow mb-4">
-          <img className="object-cover w-full rounded-t-lg h-60" src={imageUrl} alt={name} />
+      <div className="flex-grow pt-4">
+        {/* Promotion Badge */}
+        {promotion && (
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <span className="rounded bg-blue-900 px-2.5 py-0.5 text-xs font-medium text-white">
+              {promotion}
+            </span>
+          </div>
+        )}
+
+        {/* Product Name */}
+        <Link to={`/product/${id}`}>
+          <span className="text-lg font-semibold leading-tight text-gray-900 hover:underline">
+            {name}
+          </span>
+        </Link>
+
+        {/* Category and Rating */}
+        <p className="mt-1 text-sm text-gray-500">
+          Category: <strong>{category}</strong>
+        </p>
+        <p className="mt-1 text-sm text-gray-500">
+          Rating: <strong>{rating} ⭐</strong>
+        </p>
+
+        {/* Availability */}
+        <div className="flex items-center mt-2">
+          <RiShoppingBag3Line className="mr-1" />
+          <p className="text-sm font-medium text-gray-500">
+            {availability}
+          </p>
         </div>
 
-        {/* Content */}
-        <div className="flex-grow p-4">
-          <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{description}</p>
-          <div className="flex mb-4">
-            <div className="mr-4">
-              <span className="font-bold text-gray-700 dark:text-gray-300">Price:</span>
-              <span className="text-gray-600 dark:text-gray-300">{price}</span>
-            </div>
-            <div>
-              <span className="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
-              <span className="text-gray-600 dark:text-gray-300">{availability}</span>
-            </div>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="quantity" className="font-bold text-gray-700 dark:text-gray-300">Select Amount:</label>
-            <div className="mt-2">
-              <select
-                id="quantity"
-                name="quantity"
-                className="px-4 py-2 font-bold text-gray-700 bg-gray-300 rounded-full dark:bg-gray-700 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600"
-              >
-                {/* Options for quantity */}
-                {Array.from({ length: 15 }, (_, i) => i + 1).map(value => (
-                  <option key={value} value={value}>{value}</option>
-                ))}
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select>
-            </div>
-          </div>
+        {/* Price and Add to Cart Button */}
+        <div className="flex items-center justify-between gap-4 mt-4">
+          <p className="text-2xl font-extrabold text-gray-900">
+            {price} ETB
+          </p>
+          <button
+            type="button"
+            className="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            onClick={onAddToCart}
+          >
+            <CiShoppingCart className="mr-2 text-2xl" /> Add to cart
+          </button>
         </div>
-
-        {/* Footer */}
-        <footer className="flex items-center justify-between p-4 bg-gray-200 rounded-b-lg dark:bg-gray-700">
-          <button className="px-4 py-2 font-bold text-white bg-gray-900 rounded-full dark:bg-gray-600 hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
-          <button className="px-4 py-2 font-bold text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
-        </footer>
       </div>
     </div>
   );

@@ -2,20 +2,19 @@ import React from "react";
 
 const Footer = () => {
   const links = [
-    { name: "Home", href: "#" },
-    { name: "Products", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "Products", href: "product" },
+    { name: "About Us", href: "/aboutus" },
+    { name: "Contact Us", href: "contact" },
   ];
 
   const contactInfo = [
     {
       type: "Address",
-      value: "Pastor Square, Somalia St., Filix Pharmacy",
+      value: "Pastor Square, Somalia St, Filix Pharmacy",
     },
-    { type: "Phone", value: "+251-9145-678-901" },
-    { type: "Email", value: "contact@pharmawholesale.com" },
+    { type: "Phone", value: "+251-95-204-0506" },
+    { type: "Email", value: "filixpharma15@gmail.com  " },
   ];
 
   const policies = [
@@ -24,7 +23,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-green-700 text-white py-10">
+    <footer className="bg-[#2B4262] text-white py-10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo and Description */}
         <div>

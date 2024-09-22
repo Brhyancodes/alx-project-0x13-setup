@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import backgroundImage from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
-import photo from '../../assets/samuel-kwabena-ansong-cs4icPeWFJY-unsplash.jpg';
+import backgroundImage from '../../assets/wp1931665-pharmacy-wallpapers.jpg';
+import photo from '../../assets/wp1931665-pharmacy-wallpapers.jpg';
 const LogoutPage = () => {
     return (
       <main>
