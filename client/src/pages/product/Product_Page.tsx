@@ -1,13 +1,10 @@
-import React from "react";
 // import ProductCard from './ProductCard';
 // import Navbar from "../../components/Navbar"
 import { products } from "../../data/data";
 import ProductCard from "./ProductCard";
 import Navbar from "../../components/Navbar";
 import React, { useState } from 'react';
-import { products } from '../../data/data';
-import ProductCard from './ProductCard';
-import Navbar from '../../components/Navbar';
+
 
 
 const categories = ['All', 'Antibiotics', 'Contraceptives', 'Eye Care', 'Pain Relievers'];
@@ -53,6 +50,7 @@ const ProductPage: React.FC = () => {
           {/* Sidebar */}
           <aside className="w-full p-4 mb-4 bg-gray-100 md:w-1/4 md:mr-4 md:mb-0">
             <h3 className="mb-4 text-lg font-semibold">Filters</h3>
+            
 
             {/* Category Filter Dropdown */}
             <div className="mb-4">
