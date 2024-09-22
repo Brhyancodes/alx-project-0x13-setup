@@ -1,13 +1,10 @@
-import React from "react";
 // import ProductCard from './ProductCard';
 // import Navbar from "../../components/Navbar"
 import { products } from "../../data/data";
 import ProductCard from "./ProductCard";
 import Navbar from "../../components/Navbar";
 import React, { useState } from 'react';
-import { products } from '../../data/data';
-import ProductCard from './ProductCard';
-import Navbar from '../../components/Navbar';
+
 
 
 const categories = ['All', 'Antibiotics', 'Contraceptives', 'Eye Care', 'Pain Relievers'];
