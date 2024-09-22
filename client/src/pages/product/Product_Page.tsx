@@ -1,13 +1,21 @@
+import React from "react";
+// import ProductCard from './ProductCard';
+// import Navbar from "../../components/Navbar"
+import { products } from "../../data/data";
+import ProductCard from "./ProductCard";
+import Navbar from "../../components/Navbar";
 import React, { useState } from 'react';
 import { products } from '../../data/data';
 import ProductCard from './ProductCard';
 import Navbar from '../../components/Navbar';
+
 
 const categories = ['All', 'Antibiotics', 'Contraceptives', 'Eye Care', 'Pain Relievers'];
 const ratings = [1, 2, 3, 4, 5];
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 const ProductPage: React.FC = () => {
+
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [minPrice, setMinPrice] = useState<string>('');
   const [maxPrice, setMaxPrice] = useState<string>('');
@@ -35,6 +43,7 @@ const ProductPage: React.FC = () => {
 
     return matchesLetter && matchesCategory && matchesPrice && matchesRating && matchesStock;
   });
+
 
   return (
     <>

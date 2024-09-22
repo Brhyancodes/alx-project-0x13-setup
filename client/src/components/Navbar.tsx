@@ -60,7 +60,7 @@ export default function Navbar() {
             />
             <p className="ml-6 text-gray-800 font-bold flex items-center gap-2">
               <FaPhone />
-              +251 456 7890
+              +251-95-204-0506
               <FaCartShopping
                 onClick={() => setOpen(true)}
                 className="text-2xl ml-10 text-green-500 hover:text-green-600 ease-in-out duration-150"
@@ -145,9 +145,9 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               to="/login"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
             >
-              Log in <span aria-hidden="true">&rarr;</span>
+              Log in <span aria-hidden="true">&nbsp; &rarr;</span>
             </Link>
           </div>
         </nav>

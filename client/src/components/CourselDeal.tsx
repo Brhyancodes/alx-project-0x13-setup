@@ -22,7 +22,7 @@ export const CourselDeal: React.FC = () => {
         spaceBetween={10}
         pagination={{
           clickable: true,
-          el: ".custom-pagination", // Set custom pagination element
+          el: ".custom-pagination", 
         }}
         breakpoints={{
           640: {

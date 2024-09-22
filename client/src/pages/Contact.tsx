@@ -15,30 +15,20 @@ const contactInfo = [
   },
   {
     label: "Phone",
-    value: "+251952040506",
+    value: "+251-95-204-0506",
     icon: <FaPhoneAlt className="text-green-600" />,
   },
-  {
-    label: "Phone",
-    value: "+251901125691",
-    icon: <FaPhoneAlt className="text-green-600" />,
-  },
-  {
-    label: "Phone",
-    value: "+251909680259",
-    icon: <FaPhoneAlt className="text-green-600" />,
-  },
- 
+
   {
     label: "Email",
-    value: "example@example.com",
+    value: "filixpharma15@gmail.com",
     icon: <MdEmail className="text-green-600" />,
   },
 ];
 
 const hours = [
-  { day: "Monday - Friday", time: "9:00 AM - 5:00 PM" },
-  { day: "Saturday", time: "10:00 AM - 2:00 PM" },
+  { day: "Monday - Friday", time: "8:00 AM - 5:00 PM" },
+  { day: "Saturday", time: "8:00 AM - 12:00 PM" },
   { day: "Sunday", time: "Closed" },
 ];
 

@@ -13,8 +13,8 @@ const Footer = () => {
       type: "Address",
       value: "Pastor Square, Somalia St, Filix Pharmacy",
     },
-    { type: "Phone", value: "+251-9145-678-901" },
-    { type: "Email", value: "contact@pharmawholesale.com" },
+    { type: "Phone", value: "+251-95-204-0506" },
+    { type: "Email", value: "filixpharma15@gmail.com  " },
   ];
 
   const policies = [
