@@ -5,7 +5,7 @@ import About from "../../components/About";
 import Testimonials from "../../components/Testimonials";
 import Hero from "../../components/Hero";
 import Cauresel from "../../components/CaureselHero";
-// import { CourselDeal } from "../../components/CourselDeal";
+import { CourselDeal } from "../../components/CourselDeal";
 
 
 
@@ -17,7 +17,7 @@ export default function App() {
         <Navbar />
         <Hero />
       </div>
-      {/* <CourselDeal/> */}
+      <CourselDeal/>
       <Featured />
       <About />
       <Testimonials />

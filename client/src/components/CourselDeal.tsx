@@ -1,12 +1,7 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-
-// Import required modules
 import { Pagination, Autoplay } from "swiper/modules";
 import ProductCard from "../pages/product/ProductCard";
 import { products } from "../data/data";
@@ -14,6 +9,7 @@ import { products } from "../data/data";
 export const CourselDeal: React.FC = () => {
   return (
     <>
+      <h1 className="text-center text-4xl font-bold my-12">Deals of the day</h1>
       <Swiper
         autoplay={{
           delay: 3000,
@@ -26,6 +22,7 @@ export const CourselDeal: React.FC = () => {
         spaceBetween={10}
         pagination={{
           clickable: true,
+          el: ".custom-pagination", // Set custom pagination element
         }}
         breakpoints={{
           640: {
@@ -56,6 +53,7 @@ export const CourselDeal: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="custom-pagination" /> {/* Custom pagination container */}
     </>
   );
 };

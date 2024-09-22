@@ -1,7 +1,7 @@
 export const products = [
   {
     name: "Venaxan levofloxacin 500",
-    price: "299.99 birr",
+    price: "299.99",
     availability: "In Stock",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNdmOTyRCkdE3FZPmOh46bURlk95SswpU3BVhw_rishmA4sxwR0NMqlWvLhsMCKx2JOjc&usqp=CAU",
@@ -10,7 +10,7 @@ export const products = [
   },
   {
     name: "Miraclin",
-    price: "399.99 birr",
+    price: "399.99",
     availability: "In Stock",
     imageUrl: "https://www.my-personaltrainer.it/images/farmaci/Miraclin.jpg",
     description:
@@ -18,7 +18,7 @@ export const products = [
   },
   {
     name: "Yasmin",
-    price: "$49.99",
+    price: "49.99",
     availability: "In Stock",
     imageUrl:
       "https://rightangled.com/cdn/shop/files/201.png?v=1720624308&width=400",
@@ -27,7 +27,7 @@ export const products = [
   },
   {
     name: "Latanoprost eye drop",
-    price: "$49.99",
+    price: "49.99",
     availability: "In Stock",
     imageUrl:
       "https://images.apollo247.in/pub/media/catalog/product/L/A/LAT0005_1_1.jpg?tr=w-167.5,q-60,f-webp,dpr-1,c-at_max",

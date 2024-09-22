@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import { CiShoppingCart } from "react-icons/ci";
+import { RiShoppingBag3Line } from "react-icons/ri";
 
 interface ProductCardProps {
   name: string;
@@ -8,57 +10,56 @@ interface ProductCardProps {
   description: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, price, availability, imageUrl, description }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  name,
+  price,
+  availability,
+  imageUrl,
+}) => {
   return (
-    <div className="py-8 bg-gray-100 rounded-lg shadow-md  ">
-      <div className="flex flex-col h-full">
-        {/* Header */}
-      
-
-        {/* Image */}
-        <div className="flex-grow mb-4">
-          <img className="object-cover w-full rounded-t-lg h-60" src={imageUrl} alt={name} />
+    <div className="rounded-lg border border-gray-200 p-6 shadow-sm bg-white">
+      <div className="h-56 w-full">
+        <a href="#">
+          <img
+            className="mx-auto hidden h-full dark:block"
+            src={imageUrl}
+            alt={name}
+          />
+        </a>
+      </div>
+      <div className="pt-6">
+        <div className="mb-4 flex items-center justify-between gap-4">
+          <span className="me-2 rounded bg-blue-900 px-2.5 py-0.5 text-xs font-medium text-white">
+            BUY 20 GET 2 FREE
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="flex-grow p-4">
-          <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{description}</p>
-          <div className="flex mb-4">
-            <div className="mr-4">
-              <span className="font-bold text-gray-700 dark:text-gray-300">Price:</span>
-              <span className="text-gray-600 dark:text-gray-300">{price}</span>
-            </div>
-            <div>
-              <span className="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
-              <span className="text-gray-600 dark:text-gray-300">{availability}</span>
-            </div>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="quantity" className="font-bold text-gray-700 dark:text-gray-300">Select Amount:</label>
-            <div className="mt-2">
-              <select
-                id="quantity"
-                name="quantity"
-                className="px-4 py-2 font-bold text-gray-700 bg-gray-300 rounded-full dark:bg-gray-700 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600"
-              >
-                {/* Options for quantity */}
-                {Array.from({ length: 15 }, (_, i) => i + 1).map(value => (
-                  <option key={value} value={value}>{value}</option>
-                ))}
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select>
-            </div>
-          </div>
+        <a
+          href="#"
+          className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-black"
+        >
+          {name}
+        </a>
+
+        <div className="flex items-center mt-2">
+          <RiShoppingBag3Line className="mr-1" />
+          <p className="text-sm font-medium text-gray-500 dark:text-gray-900">
+            {availability}
+          </p>
         </div>
 
-        {/* Footer */}
-        <footer className="flex items-center justify-between p-4 bg-gray-200 rounded-b-lg dark:bg-gray-700">
-          <button className="px-4 py-2 font-bold text-white bg-gray-900 rounded-full dark:bg-gray-600 hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
-          <button className="px-4 py-2 font-bold text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
-        </footer>
+        <div className="mt-4 flex items-center justify-between gap-4">
+          <p className="text-2xl font-extrabold leading-tight text-gray-900 dark:text-gray-800">
+            {price} ETB
+          </p>
+
+          <button
+            type="button"
+            className="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            <CiShoppingCart className="text-2xl mr-2" /> Add to cart
+          </button>
+        </div>
       </div>
     </div>
   );
