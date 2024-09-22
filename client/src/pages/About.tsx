@@ -45,11 +45,11 @@ const AboutPage = () => {
                 About Us
               </h2>
               <p className="mt-4 text-gray-600 text-lg">
-                Welcome to [Pharmacy Name], your trusted provider for
-                top-quality medications and healthcare products. Our mission is
-                to ensure the well-being of our customers by offering a wide
-                range of prescription and over-the-counter drugs, as well as
-                personalized services tailored to your health needs.
+                Welcome to filixpharma, your trusted provider for top-quality
+                medications and healthcare products. Our mission is to ensure
+                the well-being of our customers by offering a wide range of
+                prescription and over-the-counter drugs, as well as personalized
+                services tailored to your health needs.
                 <br />
                 <br />
                 We are committed to excellence, providing competitive pricing,
@@ -58,8 +58,8 @@ const AboutPage = () => {
                 right medication, our team is here to help.
                 <br />
                 <br />
-                At [Pharmacy Name], your health is our priority. We look forward
-                to being your go-to pharmacy for all your healthcare needs.
+                At filixpharma, your health is our priority. We look forward to
+                being your go-to pharmacy for all your healthcare needs.
               </p>
             </div>
             <div className="mt-12 md:mt-0">
@@ -100,7 +100,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 // import ProductCard from './ProductCard';
 // import Navbar from "../../components/Navbar"
-import { products } from '../../data/data';
-import ProductCard from './ProductCard';
-import Navbar from '../../components/Navbar';
+import { products } from "../../data/data";
+import ProductCard from "./ProductCard";
+import Navbar from "../../components/Navbar";
 
 const ProductPage: React.FC = () => {
- 
-
   return (
     <>
       {/* <div className="min-h-screen bg-gray-100 pt-40 dark:bg-gray-800">
