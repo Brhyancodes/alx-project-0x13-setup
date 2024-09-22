@@ -15,6 +15,8 @@ import FAQ from "./pages/FAQ.tsx";
 import About from "./pages/About.tsx";
 import AOS from "aos"
 import "aos/dist/aos.css";
+import ProductDetailPage from "./pages/product/ProductDetailPage.tsx"; // Adjust the path as necessary
+
 AOS.init({
   duration: 1000,
   once: false,
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/product",
     element: <ProductPage />,
+  },
+  {
+    path: "/product/:id", // Add this line for product details
+    element: <ProductDetailPage />,
   },
   {
     path: "/contact",
