@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 interface ProductCardProps {
   name: string;
   price: string;
-  availability: "In Stock" | "Out of Stock"; // More specific type
+  availability: "In Stock" | "Out of Stock";
   imageUrl: string;
   category: string;
-  rating: number;
   id: number;
-  promotion?: string; // Optional promotion message
-  onAddToCart?: () => void; // Optional handler for add to cart
+  promotion?: string;
+  onAddToCart?: () => void;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -21,18 +20,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
   availability,
   imageUrl,
   category,
-  rating,
   id,
   promotion,
   onAddToCart,
 }) => {
   return (
-    <div className="flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow-sm h-80 w-80">
+    <div className="flex flex-col w-full max-w-xs p-4 mx-auto bg-white border border-gray-200 rounded-lg shadow-sm">
       {/* Image Section */}
       <div className="flex items-center justify-center w-full h-40">
         <Link to={`/product/${id}`}>
           <img
-            className="object-cover h-full"
+            className="object-cover w-full h-full"
             src={imageUrl}
             alt={`Image of ${name}`}
           />
@@ -42,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="flex-grow pt-4">
         {/* Promotion Badge */}
         {promotion && (
-          <div className="flex items-center justify-between gap-4 mb-4">
+          <div className="flex items-center justify-between mb-2">
             <span className="rounded bg-blue-900 px-2.5 py-0.5 text-xs font-medium text-white">
               {promotion}
             </span>
@@ -56,12 +54,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </span>
         </Link>
 
-        {/* Category and Rating */}
+        {/* Category */}
         <p className="mt-1 text-sm text-gray-500">
           Category: <strong>{category}</strong>
-        </p>
-        <p className="mt-1 text-sm text-gray-500">
-          Rating: <strong>{rating} ⭐</strong>
         </p>
 
         {/* Availability */}
@@ -79,10 +74,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </p>
           <button
             type="button"
-            className="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
             onClick={onAddToCart}
           >
-            <CiShoppingCart className="mr-2 text-2xl" /> Add to cart
+            <CiShoppingCart className="mr-2 text-lg" /> Add to cart
           </button>
         </div>
       </div>
