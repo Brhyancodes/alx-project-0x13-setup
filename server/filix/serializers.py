@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, unitCategory, Product, Customer, Cart, CartItem, Order, OrderItem, Payment
+from .models import Category, UnitCategory, Product, Customer, Cart, CartItem, Order, OrderItem, Payment
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,24 +9,24 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class UnitCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = unitCategory
-        fields = ['id', 'unit', 'quantity', 'created_at', 'updated_at']
+        model = UnitCategory
+        fields = ['id', 'name', 'created_at', 'updated_at']
 
 
 class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
     unitcategory = UnitCategorySerializer(read_only=True)
     category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category', write_only=True)
-    unitcategory_id = serializers.PrimaryKeyRelatedField(queryset=unitCategory.objects.all(), source='unitcategory', write_only=True)
+    unitcategory_id = serializers.PrimaryKeyRelatedField(queryset=UnitCategory.objects.all(), source='unit_category', write_only=True)
 
     class Meta:
         model = Product
         fields = [
-            'id', 'name', 'description', 'price', 'quantity', 'image_url', 'created_at', 'updated_at',
-            'category', 'category_id', 'unitcategory', 'unitcategory_id', 'Expire_date'
+            'id', 'name', 'description', 'price', 'quantity', 'image_url', 'created_at',
+            'updated_at', 'category', 'category_id', 'unitcategory', 'unitcategory_id', 'expire_date'
         ]
-
-
+        
+        
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
