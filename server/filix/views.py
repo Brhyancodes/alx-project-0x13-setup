@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Category, unitCategory, Product, Customer, Cart, CartItem, Order, OrderItem, Payment
+from .models import Category, UnitCategory, Product, Customer, Cart, CartItem, Order, OrderItem, Payment
 from .serializers import (
     CategorySerializer, UnitCategorySerializer, ProductSerializer, CustomerSerializer,
     CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer, PaymentSerializer
@@ -11,16 +11,58 @@ from .serializers import (
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    def update(self, request, *args, **kwargs):
+        # Handles the update logic
+        partial = kwargs.pop('partial', False)  # Allow partial updates
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+
+    def destroy(self, request, *args, **kwargs):
+        # Handles the delete logic
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class UnitCategoryViewSet(viewsets.ModelViewSet):
-    queryset = unitCategory.objects.all()
+    queryset = UnitCategory.objects.all()
     serializer_class = UnitCategorySerializer
+    def update(self, request, *args, **kwargs):
+        # Handles the update logic
+        partial = kwargs.pop('partial', False)  # Allow partial updates
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+
+    def destroy(self, request, *args, **kwargs):
+        # Handles the delete logic
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    def update(self, request, *args, **kwargs):
+        # Handles the update logic
+        partial = kwargs.pop('partial', False)  # Allow partial updates
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+
+    def destroy(self, request, *args, **kwargs):
+        # Handles the delete logic
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class CustomerViewSet(viewsets.ModelViewSet):
