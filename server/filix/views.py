@@ -6,18 +6,19 @@ from .serializers import (
     CategorySerializer, UnitCategorySerializer, ProductSerializer, CustomerSerializer,
     CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer, PaymentSerializer
 )
+from .permissions import IsAdminOrReadOnly
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     def update(self, request, *args, **kwargs):
-        # Handles the update logic
-        partial = kwargs.pop('partial', False)  # Allow partial updates
+        partial = kwargs.pop('partial', False) 
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
+        permission = AdminOl
         return Response(serializer.data)
 
     def destroy(self, request, *args, **kwargs):
@@ -49,8 +50,9 @@ class UnitCategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [IsAdminOrReadOnly]  # Apply the custom permission
+
     def update(self, request, *args, **kwargs):
-        # Handles the update logic
         partial = kwargs.pop('partial', False)  # Allow partial updates
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
